@@ -1,54 +1,188 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>MY Portfolio- Home</title>
-  <link rel="stylesheet" href="style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name — Personal Website</title>
+  <meta name="description" content="Personal website with contact details, education, hobbies and projects.">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background: #f0f0f0; }
-    nav { background: #333; padding: 10px; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; }
-    nav a:hover { text-decoration: underline; }
-    .container { margin-top: 50px; }
-    #typing { font-size: 28px; font-weight: bold; border-right: 2px solid black; padding-right: 5px; }
+    :root{
+      --bg:#f9fafb;
+      --fg:#111827;
+      --accent:#2563eb;
+      --accent-hover:#1d4ed8;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+    }
+    [data-theme="dark"]{
+      --bg:#111827;
+      --fg:#f9fafb;
+      --accent:#3b82f6;
+      --accent-hover:#60a5fa;
+      --muted:#9ca3af;
+      --card-bg:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:'Segoe UI',Roboto,Inter,sans-serif;color:var(--fg);background:var(--bg);transition:background .3s,color .3s}
+    a{color:var(--accent);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--accent-hover)}
+    header{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:var(--card-bg);position:sticky;top:0;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .brand{font-weight:700;font-size:1.25rem;color:var(--accent)}
+    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center}
+    nav a{padding:.5rem 1rem;border-radius:8px;font-weight:500;}
+    nav a.active, nav a:hover{background:var(--accent);color:#fff}
+    main{max-width:1000px;margin:2rem auto;padding:0 1.5rem;animation:fadeIn .5s ease-in}
+    section{display:none;animation:slideUp .5s ease-out}
+    section.active{display:block}
+    h1,h2{margin:.25rem 0}
+    .card{background:var(--card-bg);border:1px solid #e6e9ef;padding:1.25rem;border-radius:16px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:transform .2s, box-shadow .2s, background .3s,color .3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,0.08)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+    footer{padding:1rem;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid #e6e9ef;background:var(--card-bg);transition:background .3s,color .3s}
+    .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+    button.cta{background:var(--accent);color:#fff;border:none;padding:.75rem 1.5rem;font-size:1rem;border-radius:12px;cursor:pointer;transition:background .3s}
+    button.cta:hover{background:var(--accent-hover)}
+    button.theme-toggle{background:none;border:2px solid var(--accent);border-radius:50%;width:40px;height:40px;cursor:pointer;color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:background .3s,color .3s}
+    button.theme-toggle:hover{background:var(--accent);color:#fff}
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
-  <nav>
-    <a href="web1.html">Home</a>
-    <a href="web2.html">Education</a>
-    <a href="web3.html">Hobbies & Projects</a>
-  </nav>
+  <header role="banner">
+    <div class="brand">Your Name</div>
+    <nav role="navigation" aria-label="Primary">
+      <ul>
+        <li><a href="#home" data-target="home" class="active">Home</a></li>
+        <li><a href="#education" data-target="education">Education</a></li>
+        <li><a href="#projects" data-target="projects">Hobbies & Projects</a></li>
+        <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="container">
-    <h1 id="typing"></h1>
-    <p>Email:rite240101037@iiitmanipur.ac.in.com</p>
-    <p></p>
-    <p>Location: Jaipur, Rajasthan</p>
-  </div>
-  <footer>
-  <div class="social">
-     <a href="mailto:riteshsharma7911@gmail.com">Email</a> |
-     <a href="tel:X">Phone</a> |
-     <a href="https://github.com/Riteshsh55" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-  </div>
-  <p>© 2025 Ritesh — <a href="web1.html"></a></p>
-</footer>
+  <main id="main" tabindex="-1">
+    <!-- Home -->
+    <section id="home" class="active" role="region" aria-labelledby="home-heading">
+      <h1 id="home-heading">👋 Hi, I'm Your Name</h1>
+      <div class="card" role="article">
+        <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap">
+          <img src="https://via.placeholder.com/240x240.png?text=Avatar" alt="Photo of Your Name" class="avatar">
+          <div>
+            <p>🌍 A [Your Profession/Student] from [City, Country]. Passionate about tech, learning, and building creative projects.</p>
+            <p><strong>📧 Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+            <p><strong>📱 Phone:</strong> +91-XXXXXXXXXX</p>
+            <p><strong>📍 Location:</strong> City, Country</p>
+            <button class="cta" onclick="alert('Thanks for visiting!')">Say Hello 👋</button>
+          </div>
+        </div>
+      </div>
 
+      <h2>Explore</h2>
+      <div class="grid">
+        <a class="card" href="#education" data-target="education">🎓 Education</a>
+        <a class="card" href="#projects" data-target="projects">💡 Hobbies & Projects</a>
+        <a class="card" href="/resume.pdf">📄 Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" role="region" aria-labelledby="education-heading">
+      <h1 id="education-heading">🎓 Education</h1>
+      <div class="card">
+        <h2>Bachelor of Engineering — Computer Science</h2>
+        <p>University Name — 2023 — Grade/Percentage</p>
+        <ul>
+          <li>Class XII — School Name — Year — Percentage</li>
+          <li>Class X — School Name — Year — Percentage</li>
+        </ul>
+        <h2>Certifications</h2>
+        <ul>
+          <li>Certification Name — Issuer — Year</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" role="region" aria-labelledby="projects-heading">
+      <h1 id="projects-heading">💡 Hobbies & Projects</h1>
+      <div class="card">
+        <h2>Hobbies</h2>
+        <p>📷 Photography, 🎸 Playing Guitar, 🏞 Hiking, 📚 Reading, 💻 Open Source</p>
+      </div>
+
+      <div class="card">
+        <h2>Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>🌐 Project One</h3>
+            <p>A web app built with HTML, CSS, JS. Interactive and responsive.</p>
+            <a href="#">🔗 View Demo</a>
+          </div>
+          <div class="card">
+            <h3>📱 Project Two</h3>
+            <p>Mobile app with real-time features. Built using Flutter.</p>
+            <a href="#">🔗 View Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© <span id="year"></span> Your Name — <a href="#home" data-target="home">Back to top ↑</a></p>
+  </footer>
 
   <script>
-    let text = "👋 Hi, I'm Ritesh Sharma;
-    let i = 0;
-    function typeEffect() {
-      if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, 100);
-      }
+    function showSection(id){
+      document.querySelectorAll('main section').forEach(s => {
+        if(s.id === id){
+          s.classList.add('active');
+          s.removeAttribute('aria-hidden');
+        } else {
+          s.classList.remove('active');
+          s.setAttribute('aria-hidden','true');
+        }
+      });
+      document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+      const navLink=document.querySelector(`nav a[data-target="${id}"]`);
+      if(navLink) navLink.classList.add('active');
     }
-    window.onload = typeEffect;
+
+    document.querySelectorAll('a[data-target]').forEach(a => {
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const target=this.getAttribute('data-target');
+        location.hash=target;
+        showSection(target);
+      });
+    });
+
+    function onHash(){
+      const id=location.hash?location.hash.replace('#',''):'home';
+      showSection(document.getElementById(id)?id:'home');
+    }
+
+    // Dark mode toggle
+    const themeToggle=document.getElementById('themeToggle');
+    function setTheme(theme){
+      document.documentElement.setAttribute('data-theme',theme);
+      localStorage.setItem('theme',theme);
+      themeToggle.textContent= theme==='dark' ? '☀️' : '🌙';
+    }
+    themeToggle.addEventListener('click',()=>{
+      const current=document.documentElement.getAttribute('data-theme');
+      setTheme(current==='dark' ? 'light' : 'dark');
+    });
+
+    window.addEventListener('hashchange', onHash);
+    window.addEventListener('load',()=>{
+      document.getElementById('year').textContent=new Date().getFullYear();
+      const saved=localStorage.getItem('theme')||'light';
+      setTheme(saved);
+      onHash();
+    });
   </script>
 </body>
 </html>
-
