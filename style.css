@@ -1,0 +1,67 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fffbf0; /* light warm background */
+  color: #333;
+  text-align: center;
+}
+
+/* Navbar */
+nav {
+  background: #ff7f50; /* coral */
+  padding: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+nav a:hover {
+  background: #ff6347; /* tomato */
+}
+nav a.active {
+  background: #ffd700; /* gold */
+  color: black;
+}
+
+/* Container */
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  background: #fff3e0; /* light orange */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Headings */
+h1, h2 {
+  color: #ff4500; /* bright orange-red */
+}
+
+/* Typing effect */
+#typing {
+  font-size: 28px;
+  font-weight: bold;
+  border-right: 2px solid #ff4500;
+  padding-right: 5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
