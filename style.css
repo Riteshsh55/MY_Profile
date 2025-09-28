@@ -1,15 +1,14 @@
-/* General styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #fffbf0; /* light warm background */
+  background: #fffbf0; 
   color: #333;
   text-align: center;
 }
 
-/* Navbar */
 nav {
-  background: #ff7f50; /* coral */
+  background: #ff7f50;
   padding: 10px;
 }
 nav a {
@@ -21,23 +20,23 @@ nav a {
   transition: background 0.3s;
 }
 nav a:hover {
-  background: #ff6347; /* tomato */
+  background: #ff6347;
 }
 nav a.active {
-  background: #ffd700; /* gold */
+  background: #ffd700; 
   color: black;
 }
 
-/* Container */
+
 .container {
   max-width: 700px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* Cards */
+
 .card {
-  background: #fff3e0; /* light orange */
+  background: #fff3e0;
   padding: 20px;
   margin: 20px 0;
   border-radius: 12px;
@@ -50,13 +49,12 @@ nav a.active {
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Headings */
 h1, h2 {
-  color: #ff4500; /* bright orange-red */
+  color: #ff4500;
 }
-/* Footer */
+
 footer {
-  background: #ff7f50; /* coral matching navbar */
+  background: grey; 
   color: white;
   padding: 20px 10px;
   text-align: center;
@@ -66,24 +64,24 @@ footer {
   border-top-right-radius: 12px;
 }
 footer a {
-  color: white;
+  color: black;
   text-decoration: none;
   margin: 0 8px;
   transition: color 0.3s;
 }
 footer a:hover {
-  color: #ffd700; /* gold */
+  color: yellow; 
 }
 footer .social {
   margin: 10px 0;
 }
 
 
-/* Typing effect */
+
 #typing {
   font-size: 28px;
   font-weight: bold;
-  border-right: 2px solid #ff4500;
+  border-right: 2px solid purple;
   padding-right: 5px;
   display: inline-block;
   margin-bottom: 20px;
