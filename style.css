@@ -54,6 +54,30 @@ nav a.active {
 h1, h2 {
   color: #ff4500; /* bright orange-red */
 }
+/* Footer */
+footer {
+  background: #ff7f50; /* coral matching navbar */
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #ffd700; /* gold */
+}
+footer .social {
+  margin: 10px 0;
+}
+
 
 /* Typing effect */
 #typing {
