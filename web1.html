@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website - Home</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background: #f0f0f0; }
+    nav { background: #333; padding: 10px; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; }
+    nav a:hover { text-decoration: underline; }
+    .container { margin-top: 50px; }
+    #typing { font-size: 28px; font-weight: bold; border-right: 2px solid black; padding-right: 5px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="web1.html">Home</a>
+    <a href="web2.html">Education</a>
+    <a href="web3.html">Hobbies & Projects</a>
+  </nav>
+
+  <div class="container">
+    <h1 id="typing"></h1>
+    <p>Email: you@example.com</p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Location: City, Country</p>
+  </div>
+
+  <script>
+    let text = "👋 Hi, I'm Your Name";
+    let i = 0;
+    function typeEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+    window.onload = typeEffect;
+  </script>
+</body>
+</html>
+
